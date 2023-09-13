@@ -18,11 +18,11 @@ namespace TestEFRecursive.EntitiesConfiguration
             builder.HasKey(ps => new { ps.BasedUserId, ps.SharedProfileId });
 
             builder.HasOne(ps => ps.profile)
-                   .WithMany(p => p.Profiles)
+                   .WithMany(p => p.ProfilesBase)
                    .HasForeignKey(fk => fk.BasedUserId);
 
             builder.HasOne(ps => ps.profile)
-                   .WithMany(p => p.Profiles)
+                   .WithMany(p => p.ProfilesShared)
                    .HasForeignKey(fk => fk.SharedProfileId);
 
         }
