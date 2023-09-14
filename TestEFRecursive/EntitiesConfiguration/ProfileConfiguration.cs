@@ -33,10 +33,10 @@ namespace TestEFRecursive.EntitiesConfiguration
                    .IsUnique();
 
             builder.HasMany(p => p.ProfilesBase)
-                        .WithMany(p => p.ProfilesShared)
-                        .UsingEntity<ProfileShared>(
-                                ps => ps.HasOne<Profile>().WithMany().HasForeignKey(ps => ps.BasedUserId),
-                                ps => ps.HasOne<Profile>().WithMany().HasForeignKey(ps => ps.SharedProfileId));
+                   .WithMany(p => p.ProfilesShared)
+                   .UsingEntity<ProfileShared>(
+                         ps => ps.HasOne<Profile>().WithMany().HasForeignKey(ps => ps.BasedUserId),
+                         ps => ps.HasOne<Profile>().WithMany().HasForeignKey(ps => ps.SharedProfileId));
 
         }
     }
