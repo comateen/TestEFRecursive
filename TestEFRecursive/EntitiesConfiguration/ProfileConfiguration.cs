@@ -31,6 +31,13 @@ namespace TestEFRecursive.EntitiesConfiguration
             builder.HasCheckConstraint("CK_Email", "Email LIKE '__%@__%.%'")
                    .HasIndex(c => c.Email)
                    .IsUnique();
+
+            builder.HasMany(p => p.ProfilesBase)
+                        .WithMany(p => p.ProfilesShared)
+                        .UsingEntity<ProfileShared>(
+                                ps => ps.HasOne<Profile>().WithMany().HasForeignKey(ps => ps.BasedUserId),
+                                ps => ps.HasOne<Profile>().WithMany().HasForeignKey(ps => ps.SharedProfileId));
+
         }
     }
 }

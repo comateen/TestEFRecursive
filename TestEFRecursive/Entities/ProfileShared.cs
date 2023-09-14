@@ -9,8 +9,9 @@ namespace TestEFRecursive.Entities
     public class ProfileShared
     {
         public int BasedUserId { get; set; }
-        public virtual Profile profile { get; set; }
+        
+        //public Profile profile { get; set; }
         public int SharedProfileId { get; set; }
-        public virtual Profile Sharedprofile { get; set; }
+        //public Profile Sharedprofile { get; set; }
     }
 }

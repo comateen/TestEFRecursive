@@ -18,15 +18,18 @@ namespace TestEFRecursive.EntitiesConfiguration
             
             builder.HasKey(ps => new { ps.BasedUserId, ps.SharedProfileId });
 
-            builder.HasOne(ps => ps.profile)
-                   .WithMany(p => p.ProfilesBase)
-                   .HasForeignKey(fk => fk.BasedUserId);
+            //builder.HasOne(ps => ps.profile)
+            //       .WithMany(/*p => p.ProfilesBase*/)
+            //       .HasForeignKey(fk => fk.BasedUserId)
+            //       .HasConstraintName("FK_BasedUser");
 
-            builder.HasOne(ps => ps.profile)
-                   .WithMany(p => p.ProfilesShared)
-                   .HasForeignKey(fk => fk.SharedProfileId);
+            //builder.HasOne(ps => ps.profile)
+            //       .WithMany(/*p => p.ProfilesShared*/)
+            //       .HasForeignKey(fk => fk.SharedProfileId)
+            //       .HasConstraintName("FK_SharedUser");
 
         }
     }
 }
+
 

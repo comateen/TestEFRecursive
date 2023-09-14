@@ -13,8 +13,7 @@ namespace TestEFRecursive.Entities
         public string LastName { get; set; }
         public string Email { get; set; }
 
-        public ICollection<ProfileShared> ProfilesBase { get; set; }
-
-        public ICollection<ProfileShared> ProfilesShared { get; set; }
+        public ICollection<Profile> ProfilesBase { get; set; }
+        public ICollection<Profile> ProfilesShared { get; set; }
     }
 }
